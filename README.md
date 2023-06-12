@@ -45,7 +45,13 @@ or
   doi={10.1109/ICAR53236.2021.9659409}}
 ```
 ## Installation
-First make sure that the dependencies in requirements.txt are installed. 
+Tested on: Ubuntu 20.04.6, Python 3.8.10, pip 23.1.2.
+
+```
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
 
 Please download and extract the trained <a href="https://drive.google.com/file/d/1aac0cFlYGbtY2ULxXd7jOJM9UgYDuBS7/view?usp=sharing">weights</a> into Sim2Goal/models/weights .
 Please download and extract the <a href="https://drive.google.com/file/d/16TcBqhN-G6n3ZNBic2NxX0xVsYeqCtLa/view?usp=sharing">datasets</a> into Sim2Goal/datasets .
@@ -67,6 +73,12 @@ wildtrack.ndjson
 For the social influence experiment we used the Trajnet++ _synth_ data. To precosess them we used the script `split_trajnet_synth.py`
 
 ## Running pretrained Models
+Tested on: Ubuntu 20.04.6, Python 3.8.10, pip 23.1.2.
+
+```
+source .venv/bin/activate
+python eval_GoalFlow.py --model_path ./models/weights/GFLOW-TrajNet-
+```
 
 First, for each model that is to be executed, the correct configuration must be in `config.py`.
 For example, if you want to run the Sim2Goal model, the content of `SIM2Goal_config.py` must be copy pasted 
