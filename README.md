@@ -121,6 +121,21 @@ We will now give you an overview of the most important parameters:
 - `experiment_name`: Sets the name for the experiment.
 - `check_after_num_epochs`: Checkpoints are saved to disk every `--checkpoint_every` iterations. Default is 100. Each checkpoint contains a history of training losses, error metrics like ADE, FDE etc,  the current state of the generator, discriminators, and optimizers, as well as all other state information needed to resume training in case it is interrupted. We actually save two checkpoints: one with all information, and one without model parameters; the latter is much smaller, and is convenient for exploring the results of a large hyperparameter sweep without actually loading model parameters.
 
+## Docker
+
+Prerequisites: [Docker](https://docs.docker.com/engine/install/ubuntu/), 
+[NVIDIA Container Toolkit](https://github.com/NVIDIA/nvidia-docker)
+
+Build the image with:
+```
+docker build -t sim2goal .
+```
+
+Run a container with:
+```
+docker run -it --rm --gpus all --name sim2goal sim2goal
+```
+
 ## Thanks to
 
 https://github.com/agrimgupta92/sgan/blob/master/README.md on which this rep. is build on.
