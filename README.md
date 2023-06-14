@@ -133,7 +133,7 @@ docker build -t sim2goal .
 
 Run a container with:
 ```
-docker run -it --rm --gpus all --name sim2goal sim2goal
+docker run -it --rm --gpus all --ipc=host --name sim2goal sim2goal
 ```
 
 ## Thanks to
